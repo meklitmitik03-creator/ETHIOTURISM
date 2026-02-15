@@ -1,15 +1,19 @@
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>ETHIOTURISM</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
+
+<!-- Menu Button -->
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
 
 <div class="container">
 
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
         <h2>ETHIOTURISM 🇪🇹</h2>
         <a href="index.html">Home</a>
         <a href="animals.html">Animals</a>
@@ -25,48 +29,54 @@
     <!-- Main Content -->
     <main class="main-content">
 
-        <!-- Hero Section -->
+        <!-- Hero -->
         <section class="hero">
-            <h1>Welcome to Ethiopia</h1>
+            <h1>Discover Ethiopia 🇪🇹</h1>
             <p>The Land of Origins</p>
         </section>
 
-        <!-- Map Section -->
+        <!-- Map -->
         <section class="section">
-            <h2>Ethiopia Map</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Ethiopia_location_map.svg" 
-                 alt="Map of Ethiopia" class="map">
+            <h2>Explore Ethiopia on the Map</h2>
+            <iframe 
+                src="https://www.google.com/maps?q=Ethiopia&output=embed"
+                width="80%" height="400" style="border:0;" allowfullscreen="">
+            </iframe>
         </section>
 
-        <!-- Airlines -->
+        <!-- Airline -->
         <section class="section">
             <h2>Airline Guide</h2>
             <div class="card-container">
                 <div class="card">
                     <h3>Ethiopian Airlines</h3>
-                    <p>Africa’s largest airline connecting Ethiopia to the world.</p>
+                    <p>Africa’s largest airline.</p>
+                    <a href="https://www.ethiopianairlines.com" target="_blank">Visit Website</a>
                 </div>
             </div>
         </section>
 
-        <!-- Taxi Services -->
+        <!-- Taxi -->
         <section class="section">
             <h2>Taxi Services</h2>
             <div class="card-container">
+
                 <div class="card">
                     <h3>Yango</h3>
-                    <p>Modern ride service available in Addis Ababa.</p>
+                    <p>Ride service in Addis Ababa.</p>
+                    <a href="https://yango.com" target="_blank">Open Yango</a>
                 </div>
 
                 <div class="card">
                     <h3>Ride</h3>
-                    <p>Popular Ethiopian ride-hailing taxi service.</p>
+                    <p>Ethiopian ride-hailing app.</p>
+                    <a href="https://ride8294.com" target="_blank">Open Ride</a>
                 </div>
+
             </div>
         </section>
 
     </main>
-
 </div>
 
 </body>
