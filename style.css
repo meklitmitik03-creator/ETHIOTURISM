@@ -156,3 +156,24 @@ body {
     text-decoration: none;
     border-radius: 5px;
 }
+.page-hero {
+    height: 40vh;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da") center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 32px;
+}
+
+.content {
+    padding: 60px 15%;
+    line-height: 1.8;
+}
+
+.region-list {
+    list-style: none;
+    font-size: 20px;
+    text-align: center;
+}
