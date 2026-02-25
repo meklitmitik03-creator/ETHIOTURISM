@@ -1,53 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Culture | ETHIOTURISM</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* ===== GLOBAL ===== */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            font-family: 'Segoe UI', sans-serif;
+            background:#f4f4f4;
+            color:#333;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero{
+            height:100vh;
+            background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da") center/cover no-repeat;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero h1{
+            font-size:60px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:22px;
+            margin-bottom:30px;
+        }
+
+        .btn{
+            padding:12px 30px;
+            background:green;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:red;
+        }
+
+        /* ===== CULTURE GRID ===== */
+        .culture-section{
+            padding:80px 10%;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            text-align:center;
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h2{
+            margin-bottom:15px;
+            color:green;
+        }
+
+        .card p{
+            margin-bottom:15px;
+            line-height:1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px){
+            .hero h1{
+                font-size:40px;
+            }
+        }
+
+    </style>
+
 </head>
 <body>
 
-<!-- Hero Section -->
-<section class="culture-hero-full">
-    <div class="hero-overlay">
-        <h1>Ethiopian Culture</h1>
-        <p>Tradition • Diversity • Heritage</p>
-        <a href="#explore" class="btn">Explore Culture</a>
-    </div>
-</section>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div>
+            <h1>Ethiopian Culture</h1>
+            <p>Tradition • Diversity • Heritage</p>
+            <a href="#culture" class="btn">Explore Culture</a>
+        </div>
+    </section>
 
-<!-- Culture Content -->
-<section id="explore" class="culture-content">
+    <!-- CULTURE CONTENT -->
+    <section id="culture" class="culture-section">
 
-    <div class="culture-card">
-        <h2>🎵 Music</h2>
-        <p>Traditional instruments and unique Ethiopian rhythms.</p>
-    </div>
+        <div class="card">
+            <h2>🎵 Music</h2>
+            <p>Unique pentatonic scales and traditional instruments like Krar and Masenqo.</p>
+        </div>
 
-    <div class="culture-card">
-        <h2>🍲 Food & Drink</h2>
-        <p>Injera, Doro Wat and the famous Coffee Ceremony.</p>
-    </div>
+        <div class="card">
+            <h2>🍲 Food & Drink</h2>
+            <p>Injera, Doro Wat, Kitfo and the world-famous Coffee Ceremony.</p>
+        </div>
 
-    <div class="culture-card">
-        <h2>👕 Traditional Clothes</h2>
-        <p>Habesha Kemis and beautiful cultural garments.</p>
-    </div>
+        <div class="card">
+            <h2>👕 Traditional Clothes</h2>
+            <p>Habesha Kemis, Netela and beautiful cultural garments worn during celebrations.</p>
+        </div>
 
-    <div class="culture-card">
-        <h2>🗺 Regions</h2>
-        <p>All 12 administrative regions of Ethiopia.</p>
-    </div>
+        <div class="card">
+            <h2>🗺 Regions</h2>
+            <p>All 12 administrative regions representing Ethiopia’s diversity.</p>
+        </div>
 
-    <div class="culture-card">
-        <h2>🎉 Ceremonies</h2>
-        <p>Timket, Meskel, Gena, Eid and Arefa celebrations.</p>
-    </div>
+        <div class="card">
+            <h2>🎉 Ceremonies</h2>
+            <p>Timket, Meskel, Gena, Eid and Arefa celebrated across the nation.</p>
+        </div>
 
-</section>
+    </section>
 
-<footer>
-    <p>© 2026 ETHIOTURISM | Discover Ethiopia 🇪🇹</p>
-</footer>
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 ETHIOTURISM | Discover Ethiopia 🇪🇹</p>
+    </footer>
 
 </body>
 </html>
