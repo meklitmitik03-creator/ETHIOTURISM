@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-
         /* ===== GLOBAL ===== */
         *{
             margin:0;
@@ -15,20 +14,49 @@
         }
 
         html{
-            scroll-behavior:smooth;
+            scroll-behavior: smooth;
         }
 
         body{
             font-family: 'Segoe UI', sans-serif;
             background:#f4f4f4;
             color:#333;
+            display: flex;
+        }
+
+        /* ===== SIDEBAR ===== */
+        .sidebar{
+            width: 220px;
+            background: linear-gradient(to bottom, green, yellow, red);
+            min-height: 100vh;
+            padding-top: 50px;
+            position: fixed;
+        }
+
+        .sidebar a{
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .sidebar a:hover{
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* ===== PAGE CONTENT ===== */
+        .main-content{
+            margin-left: 220px;
+            width: calc(100% - 220px);
         }
 
         /* ===== HERO SECTION ===== */
         .hero{
-            height:100vh;
-            background:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-            url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da") center/cover no-repeat;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url("YOUR_IMAGE_LINK_HERE") center/cover no-repeat;
             display:flex;
             justify-content:center;
             align-items:center;
@@ -62,7 +90,7 @@
 
         /* ===== CULTURE GRID ===== */
         .culture-section{
-            padding:80px 10%;
+            padding:80px 50px;
             display:grid;
             grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
             gap:30px;
@@ -97,63 +125,88 @@
             color:white;
             text-align:center;
             padding:20px;
+            margin-left: 220px;
         }
 
         /* ===== RESPONSIVE ===== */
         @media(max-width:768px){
+            .sidebar{
+                width:60px;
+                padding-top:20px;
+            }
+            .sidebar a{
+                font-size:12px;
+                padding:12px 10px;
+            }
+            .main-content{
+                margin-left:60px;
+            }
             .hero h1{
                 font-size:40px;
             }
         }
-
     </style>
 
 </head>
 <body>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div>
-            <h1>Ethiopian Culture</h1>
-            <p>Tradition • Diversity • Heritage</p>
-            <a href="#culture" class="btn">Explore Culture</a>
-        </div>
-    </section>
+    <!-- SIDEBAR MENU -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="culture.html">Culture</a>
+        <a href="history.html">History</a>
+        <a href="animals.html">Animals</a>
+        <a href="contact.html">Contact</a>
+    </div>
 
-    <!-- CULTURE CONTENT -->
-    <section id="culture" class="culture-section">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
 
-        <div class="card">
-            <h2>🎵 Music</h2>
-            <p>Unique pentatonic scales and traditional instruments like Krar and Masenqo.</p>
-        </div>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div>
+                <h1>Ethiopian Culture</h1>
+                <p>Tradition • Diversity • Heritage</p>
+                <a href="#culture" class="btn">Explore Culture</a>
+            </div>
+        </section>
 
-        <div class="card">
-            <h2>🍲 Food & Drink</h2>
-            <p>Injera, Doro Wat, Kitfo and the world-famous Coffee Ceremony.</p>
-        </div>
+        <!-- CULTURE CARDS -->
+        <section id="culture" class="culture-section">
 
-        <div class="card">
-            <h2>👕 Traditional Clothes</h2>
-            <p>Habesha Kemis, Netela and beautiful cultural garments worn during celebrations.</p>
-        </div>
+            <div class="card">
+                <h2>🎵 Music</h2>
+                <p>Unique pentatonic scales and traditional instruments like Krar and Masenqo.</p>
+            </div>
 
-        <div class="card">
-            <h2>🗺 Regions</h2>
-            <p>All 12 administrative regions representing Ethiopia’s diversity.</p>
-        </div>
+            <div class="card">
+                <h2>🍲 Food & Drink</h2>
+                <p>Injera, Doro Wat, Kitfo and the world-famous Coffee Ceremony.</p>
+            </div>
 
-        <div class="card">
-            <h2>🎉 Ceremonies</h2>
-            <p>Timket, Meskel, Gena, Eid and Arefa celebrated across the nation.</p>
-        </div>
+            <div class="card">
+                <h2>👕 Traditional Clothes</h2>
+                <p>Habesha Kemis, Netela and beautiful cultural garments worn during celebrations.</p>
+            </div>
 
-    </section>
+            <div class="card">
+                <h2>🗺 Regions</h2>
+                <p>All 12 administrative regions representing Ethiopia’s diversity.</p>
+            </div>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>© 2026 ETHIOTURISM | Discover Ethiopia 🇪🇹</p>
-    </footer>
+            <div class="card">
+                <h2>🎉 Ceremonies</h2>
+                <p>Timket, Meskel, Gena, Eid and Arefa celebrated across the nation.</p>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>© 2026 ETHIOTURISM | Discover Ethiopia 🇪🇹</p>
+        </footer>
+
+    </div>
 
 </body>
 </html>
