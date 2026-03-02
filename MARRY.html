@@ -1,0 +1,142 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethioturism AI Assistant</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background: rgba(0,0,0,0.7);
+}
+
+#chat {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    max-width: 70%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+.user {
+    align-self: flex-end;
+    background-color: #ffcc00;
+    color: black;
+}
+
+.bot {
+    align-self: flex-start;
+    background-color: rgba(255,255,255,0.2);
+}
+
+.input-area {
+    display: flex;
+    padding: 15px;
+    background: rgba(0,0,0,0.8);
+}
+
+input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ffcc00;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffaa00;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+🇪🇹 Ethioturism AI Travel Assistant
+</header>
+
+<div id="chat"></div>
+
+<div class="input-area">
+    <input type="text" id="userInput" placeholder="Ask about Ethiopia tourism...">
+    <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+async function sendMessage() {
+    const input = document.getElementById("userInput");
+    const messageText = input.value.trim();
+    if (!messageText) return;
+
+    const chat = document.getElementById("chat");
+
+    const userMessage = document.createElement("div");
+    userMessage.className = "message user";
+    userMessage.innerText = messageText;
+    chat.appendChild(userMessage);
+
+    input.value = "";
+
+    try {
+        const response = await fetch("http://localhost:5000/chat", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message: messageText })
+        });
+
+        const data = await response.json();
+
+        const botMessage = document.createElement("div");
+        botMessage.className = "message bot";
+        botMessage.innerText = data.reply;
+        chat.appendChild(botMessage);
+
+        chat.scrollTop = chat.scrollHeight;
+
+    } catch (error) {
+        const errorMessage = document.createElement("div");
+        errorMessage.className = "message bot";
+        errorMessage.innerText = "⚠️ Server not connected.";
+        chat.appendChild(errorMessage);
+    }
+}
+</script>
+
+</body>
+</html>
