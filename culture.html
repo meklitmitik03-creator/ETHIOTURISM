@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Culture | ETHIOTURISM</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* ===== GLOBAL ===== */
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+        html{
+            scroll-behavior:smooth;
+        }
+        body{
+            font-family: 'Segoe UI', sans-serif;
+            background:#f4f4f4;
+            color:#333;
+            display:flex;
+        }
+
+        /* ===== SIDEBAR MENU ===== */
+        .sidebar {
+            width: 220px;
+            background: linear-gradient(to bottom, green, yellow, red);
+            height: 100vh;
+            position: fixed;
+            top:0;
+            left:0;
+            display:flex;
+            flex-direction:column;
+            padding-top:50px;
+        }
+
+        .sidebar a{
+            padding:15px 20px;
+            text-decoration:none;
+            color:white;
+            font-weight:bold;
+            display:block;
+            transition:0.3s;
+        }
+
+        .sidebar a:hover{
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        .main{
+            margin-left:220px;
+            flex:1;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero{
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+            url("https://www.islands.com/img/gallery/the-birthplace-of-coffee-is-an-overlooked-country-with-breathtaking-landscapes-and-adventure/intro-1733758327.jpg") center/cover no-repeat;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            color:white;
+        }
+
+        .hero h1{
+            font-size:50px;
+            margin-bottom:20px;
+        }
+
+        .hero p{
+            font-size:20px;
+            margin-bottom:25px;
+        }
+
+        .btn{
+            padding:12px 25px;
+            background:green;
+            color:white;
+            text-decoration:none;
+            border-radius:5px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:red;
+        }
+
+        /* ===== CULTURE GRID ===== */
+        .culture-section{
+            padding:80px 50px;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+            gap:30px;
+        }
+
+        .card{
+            background:white;
+            padding:30px;
+            border-radius:12px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            text-align:center;
+            transition:0.4s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+        }
+
+        .card h2{
+            margin-bottom:15px;
+            color:green;
+        }
+
+        .card p{
+            line-height:1.6;
+        }
+
+        /* ===== FOOTER ===== */
+        footer{
+            background:#111;
+            color:white;
+            text-align:center;
+            padding:20px;
+            margin-top:50px;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px){
+            .sidebar{
+                width:100%;
+                height:auto;
+                position:relative;
+                flex-direction:row;
+                padding:0;
+            }
+
+            .sidebar a{
+                flex:1;
+                text-align:center;
+                padding:10px 0;
+            }
+
+            .main{
+                margin-left:0;
+            }
+
+            .hero h1{
+                font-size:35px;
+            }
+
+            .hero p{
+                font-size:16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SIDEBAR MENU -->
+    <div class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="#music">Music</a>
+        <a href="#food">Food & Drink</a>
+        <a href="#clothes">Clothes</a>
+        <a href="#regions">Regions</a>
+        <a href="#ceremonies">Ceremonies</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div>
+                <h1>Ethiopian Culture</h1>
+                <p>Tradition • Diversity • Heritage</p>
+                <a href="#culture" class="btn">Explore Culture</a>
+            </div>
+        </section>
+
+        <!-- CULTURE CARDS -->
+        <section id="culture" class="culture-section">
+
+            <div class="card" id="music">
+                <h2>🎵 Music</h2>
+                <p>Traditional instruments and unique Ethiopian rhythms.</p>
+            </div>
+
+            <div class="card" id="food">
+                <h2>🍲 Food & Drink</h2>
+                <p>Injera, Doro Wat, Kitfo and the famous Coffee Ceremony.</p>
+            </div>
+
+            <div class="card" id="clothes">
+                <h2>👕 Traditional Clothes</h2>
+                <p>Habesha Kemis, Netela and cultural garments worn during celebrations.</p>
+            </div>
+
+            <div class="card" id="regions">
+                <h2>🗺 Regions</h2>
+                <p>All 12 administrative regions representing Ethiopia’s diversity.</p>
+            </div>
+
+            <div class="card" id="ceremonies">
+                <h2>🎉 Ceremonies</h2>
+                <p>Timket, Meskel, Gena, Eid and Arefa celebrated across the nation.</p>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>© 2026 ETHIOTURISM | Discover Ethiopia 🇪🇹</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
