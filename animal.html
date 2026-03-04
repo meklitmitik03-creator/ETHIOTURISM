@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nature of Ethiopia</title>
-<link rel="stylesheet" href="styles.css">
+<title>Animals & Plants of Ethiopia</title>
+
+<!-- Leaflet CSS & JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
 <style>
   body {
       font-family: Arial, sans-serif;
@@ -88,6 +92,14 @@
       color: #333;
   }
 
+  #ethiopia-map {
+      height: 500px;
+      width: 90%;
+      margin: 2rem auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+
   footer {
       text-align: center;
       padding: 1rem;
@@ -100,7 +112,7 @@
 <body>
 
 <header>
-    <h1>Nature of Ethiopia</h1>
+    <h1>Animals & Plants of Ethiopia</h1>
     <nav>
         <a href="index.html">Home</a>
         <a href="land.html">Land</a>
@@ -136,6 +148,13 @@
         <h3>Mountain Nyala</h3>
         <p>A large antelope found in Ethiopia’s highlands.</p>
     </a>
+
+    <!-- New Animal Card -->
+    <a href="marble-cat.html" class="card">
+        <img src="images/marble-cat.jpg" alt="Marble Cat">
+        <h3>Marble Cat</h3>
+        <p>Rare wild cat found in Ethiopia’s dense forests.</p>
+    </a>
 </div>
 
 <!-- Plants Section -->
@@ -164,9 +183,44 @@
         <h3>Juniper Tree</h3>
         <p>Common in Ethiopian highlands, sacred in cultural rituals.</p>
     </a>
+
+    <!-- New Plant Card -->
+    <a href="hagenia.html" class="card">
+        <img src="images/hagenia.jpg" alt="Hagenia Tree">
+        <h3>Hagenia Tree</h3>
+        <p>Highland tree used traditionally for medicine and shade.</p>
+    </a>
 </div>
 
-</main>
+<!-- Map Section -->
+<h2>Map of Locations</h2>
+<div id="ethiopia-map"></div>
+
+<script>
+  // Initialize map centered on Ethiopia
+  var map = L.map('ethiopia-map').setView([9.145, 40.489673], 6);
+
+  // Add OpenStreetMap tiles
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a>'
+  }).addTo(map);
+
+  // Marker data
+  var locations = [
+      {name: "Simien Mountains", coords: [13.167, 38.283], description: "Gelada Baboons & Walia Ibex"},
+      {name: "Bale Mountains", coords: [6.983, 39.983], description: "Ethiopian Wolves"},
+      {name: "Danakil Depression", coords: [14.241, 40.300], description: "Extreme desert landscape"},
+      {name: "Coffee Plant Region", coords: [7.5, 37.5], description: "Origin of coffee"},
+      {name: "Enset Plant Region", coords: [6.5, 37.5], description: "Staple food in southern Ethiopia"}
+  ];
+
+  // Add markers with popups
+  locations.forEach(function(loc) {
+      L.marker(loc.coords).addTo(map)
+        .bindPopup("<b>" + loc.name + "</b><br>" + loc.description);
+  });
+</script>
 
 <footer>
     &copy; 2026 ETHIOTURISM
