@@ -18,7 +18,7 @@ app.post("/ask", async (req, res) => {
   const question = req.body.question;
 
   try {
-    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+    const response = await fetch("https://ethioturism-ai.onrender.com/ask", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
