@@ -1,40 +1,59 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import OpenAI from "openai";
-
-dotenv.config();
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+require("dotenv").config();
 
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+app.use(cors());
+app.use(bodyParser.json());
+
+/* Basic route */
+app.get("/", (req, res) => {
+  res.send("Ethioturism AI server is running");
 });
 
-app.post("/chat", async (req, res) => {
-  const { message } = req.body;
+/* AI Question route */
+app.post("/ask", async (req, res) => {
+  const question = req.body.question;
 
   try {
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a professional Ethiopian tourism assistant. Answer clearly and professionally.",
-        },
-        { role: "user", content: message },
-      ],
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system",
+            content: "You are a helpful tourism assistant for Ethiopia. Answer questions about Ethiopian culture, animals, landscapes, and tourist places."
+          },
+          {
+            role: "user",
+            content: question
+          }
+        ]
+      })
     });
 
-    res.json({ reply: completion.choices[0].message.content });
+    const data = await response.json();
+
+    res.json({
+      answer: data.choices[0].message.content
+    });
+
   } catch (error) {
-    res.status(500).json({ error: "Something went wrong" });
+    console.error(error);
+    res.status(500).json({ answer: "Error getting AI response." });
   }
 });
 
-app.listen(5000, () => {
-  console.log("Server running on http://localhost:5000");
+/* Render requires this port setup */
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
 });
