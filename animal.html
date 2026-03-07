@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature | ETHIOTURISM</title>
+
+<!-- Google Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<style>
+
+/* ===== BODY ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("images/nature-bg.jpg") no-repeat center center/cover;
+    color: white;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    width: 230px;
+    height: 100vh;
+    background: rgba(0,0,0,0.8);
+    padding-top: 20px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #f4c430;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #f4c430;
+    color: black;
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    margin-left: 230px;
+    padding: 40px;
+    width: 100%;
+}
+
+.section-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    border-left: 5px solid #f4c430;
+    padding-left: 10px;
+}
+
+/* ===== MODERN CARDS ===== */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+.card h3 {
+    margin: 10px 0;
+    color: #f4c430;
+}
+
+.card p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== SIDEBAR ===== -->
+<div class="sidebar">
+    <h2>ETHIOTURISM</h2>
+    <a href="index.html"><span class="material-icons">home</span> Home</a>
+    <a href="land.html"><span class="material-icons">terrain</span> Land</a>
+    <a href="nature.html"><span class="material-icons">park</span> Nature</a>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main">
+
+    <div class="section-title">🐾 Animals of Ethiopia</div>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="images/ethiopian-wolf.jpg">
+            <div class="card-content">
+                <h3>Ethiopian Wolf</h3>
+                <p>The rarest wolf species found in the Bale Mountains.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/gelada-baboon.jpg">
+            <div class="card-content">
+                <h3>Gelada Baboon</h3>
+                <p>Famous grass-eating primates of the Simien Mountains.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/walia-ibex.jpg">
+            <div class="card-content">
+                <h3>Walia Ibex</h3>
+                <p>Endemic wild goat with impressive curved horns.</p>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="section-title">🌿 Plants of Ethiopia</div>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="images/coffee.jpg">
+            <div class="card-content">
+                <h3>Coffee Plant</h3>
+                <p>Ethiopia is the birthplace of world-famous coffee.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/enset.jpg">
+            <div class="card-content">
+                <h3>Enset</h3>
+                <p>Known as false banana, staple food in southern Ethiopia.</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="images/frankincense.jpg">
+            <div class="card-content">
+                <h3>Frankincense</h3>
+                <p>Aromatic resin tree used in rituals and medicine.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

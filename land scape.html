@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land of Ethiopia</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+  }
+
+  header {
+      background-color: #4e342e;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 0;
+  }
+
+  header h1 {
+      margin: 0;
+      font-size: 2rem;
+  }
+
+  nav {
+      text-align: center;
+      margin-top: 10px;
+  }
+
+  nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+  }
+
+  nav a:hover {
+      text-decoration: underline;
+  }
+
+  .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 2rem;
+  }
+
+  .card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      width: 250px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+      text-decoration: none;
+      color: black;
+  }
+
+  .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+
+  .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+  }
+
+  .card h3 {
+      margin: 1rem 0 0.5rem 0;
+  }
+
+  .card p {
+      padding: 0 1rem 1rem 1rem;
+      font-size: 0.9rem;
+      color: #555;
+  }
+
+  footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #4e342e;
+      color: white;
+      margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+    <h1>The Land of Ethiopia</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="animals.html">Animals</a>
+        <a href="land.html">Land</a>
+    </nav>
+</header>
+
+<main>
+    <div class="card-container">
+        <!-- Simien Mountains -->
+        <a href="simien.html" class="card">
+            <img src="images/simien.jpg" alt="Simien Mountains">
+            <h3>Simien Mountains</h3>
+            <p>Breathtaking mountains and valleys, home to endemic wildlife like the Gelada baboon.</p>
+        </a>
+
+        <!-- Bale Mountains -->
+        <a href="bale.html" class="card">
+            <img src="images/bale.jpg" alt="Bale Mountains">
+            <h3>Bale Mountains</h3>
+            <p>Vast alpine plateaus, moorlands, and wildlife including the rare Ethiopian wolf.</p>
+        </a>
+
+        <!-- Danakil Depression -->
+        <a href="danakil.html" class="card">
+            <img src="images/danakil.jpg" alt="Danakil Depression">
+            <h3>Danakil Depression</h3>
+            <p>One of the hottest places on Earth with salt flats, volcanoes, and colorful landscapes.</p>
+        </a>
+
+        <!-- Great Rift Valley -->
+        <a href="riftvalley.html" class="card">
+            <img src="images/riftvalley.jpg" alt="Great Rift Valley">
+            <h3>Great Rift Valley</h3>
+            <p>Fertile lands, lakes, and volcanoes stretching across Ethiopia's heartland.</p>
+        </a>
+
+        <!-- Blue Nile Falls -->
+        <a href="bluenile.html" class="card">
+            <img src="images/bluenile.jpg" alt="Blue Nile Falls">
+            <h3>Blue Nile Falls</h3>
+            <p>Stunning waterfall in Bahir Dar, known as “Tis Issat” or “The Smoking Water.”</p>
+        </a>
+    </div>
+</main>
+
+<footer>
+    &copy; 2026 ETHIOTURISM
+</footer>
+
+</body>
+</html>
