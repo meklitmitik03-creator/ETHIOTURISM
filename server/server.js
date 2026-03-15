@@ -1,35 +1,36 @@
 const express = require("express");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const cors = require("axios");
 require("dotenv").config();
 
 const app = express();
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
-/* Basic route */
 app.get("/", (req, res) => {
-  res.send("Ethioturism AI server is running");
+  res.send("Ethioturism AI server running");
 });
 
-/* AI Question route */
 app.post("/ask", async (req, res) => {
+
   const question = req.body.question;
 
   try {
-    const response = await fetch("https://ethioturism-ai.onrender.com/ask", {
+
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
+
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        "Authorization": `Bearer ${process.env.OPENAI_API_KEY}`
       },
+
       body: JSON.stringify({
         model: "gpt-4o-mini",
         messages: [
           {
             role: "system",
-            content: "You are a helpful tourism assistant for Ethiopia. Answer questions about Ethiopian culture, animals, landscapes, and tourist places."
+            content: "You are a helpful AI assistant. Answer any question clearly. If the question is about Ethiopia tourism, give detailed helpful answers."
           },
           {
             role: "user",
@@ -37,6 +38,7 @@ app.post("/ask", async (req, res) => {
           }
         ]
       })
+
     });
 
     const data = await response.json();
@@ -46,12 +48,17 @@ app.post("/ask", async (req, res) => {
     });
 
   } catch (error) {
+
     console.error(error);
-    res.status(500).json({ answer: "Error getting AI response." });
+
+    res.json({
+      answer: "Server error. Please try again."
+    });
+
   }
+
 });
 
-/* Render requires this port setup */
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
