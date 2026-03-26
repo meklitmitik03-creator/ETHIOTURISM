@@ -1,216 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>History of Ethiopia</title>
-
-<style>
-
-body{
-margin:0;
-font-family:Arial;
-background:#0f172a;
-color:white;
-}
-
-/* HERO */
-
-.hero{
-height:70vh;
-background:url("https://upload.wikimedia.org/wikipedia/commons/6/65/Lalibela_Bete_Giyorgis.jpg");
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:50px;
-font-weight:bold;
-text-shadow:2px 2px 10px black;
-}
-
-/* SECTION */
-
-.section{
-padding:50px;
-text-align:center;
-}
-
-/* FLASH CARDS */
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.flip-card{
-background:transparent;
-height:300px;
-perspective:1000px;
-}
-
-.flip-inner{
-position:relative;
-width:100%;
-height:100%;
-transition:transform 0.6s;
-transform-style:preserve-3d;
-}
-
-.flip-card:hover .flip-inner{
-transform:rotateY(180deg);
-}
-
-.flip-front,.flip-back{
-position:absolute;
-width:100%;
-height:100%;
-backface-visibility:hidden;
-border-radius:10px;
-overflow:hidden;
-}
-
-.flip-front{
-background:#1e293b;
-}
-
-.flip-front img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.flip-front h3{
-padding:10px;
-}
-
-.flip-back{
-background:#334155;
-transform:rotateY(180deg);
-padding:20px;
-}
-
-/* TIMELINE */
-
-.timeline{
-border-left:3px solid #facc15;
-margin:40px;
-padding-left:20px;
-}
-
-.timeline-item{
-margin-bottom:20px;
-}
-
-/* VIDEO */
-
-iframe{
-width:80%;
-height:400px;
-border:none;
-}
-
-</style>
-
+<title>Ethiopia History</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="hero">
-History of Ethiopia
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+    <h2>Ethioturism</h2>
+
+    <a href="index.html">Home</a>
+    <a href="culture.html">Culture</a>
+    <a href="history.html">History</a>
+    <a href="animal.html">Animals</a>
+    <a href="landscape.html">Landscape</a>
 </div>
 
-<section class="section">
 
-<h2>Major Historical Periods</h2>
+<!-- MAIN CONTENT -->
 
-<div class="cards">
+<div class="main">
 
-<div class="flip-card">
-<div class="flip-inner">
+<!-- HERO BACKGROUND -->
 
-<div class="flip-front">
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Aksum_obelisk.jpg">
-<h3>Aksumite Empire</h3>
+<div class="history-hero">
+    <h1>History of Ethiopia</h1>
 </div>
 
-<div class="flip-back">
-The Kingdom of Aksum was a powerful ancient civilization known for trade, monumental obelisks, and early Christianity.
-</div>
 
-</div>
-</div>
+<!-- CARDS -->
 
-<div class="flip-card">
-<div class="flip-inner">
+<div class="history-cards">
 
-<div class="flip-front">
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Lalibela_church.jpg">
-<h3>Zagwe Dynasty</h3>
-</div>
-
-<div class="flip-back">
-The Zagwe rulers built the famous rock-hewn churches of Lalibela, one of the most important religious sites in Ethiopia.
-</div>
-
-</div>
-</div>
-
-<div class="flip-card">
-<div class="flip-inner">
-
-<div class="flip-front">
-<img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Adwa_victory.jpg">
+<a href="adwa.html" class="history-card">
+<img src="images/adwa.jpg">
 <h3>Battle of Adwa</h3>
-</div>
+</a>
 
-<div class="flip-back">
-In 1896 Ethiopia defeated Italy at Adwa, preserving its independence and inspiring anti-colonial movements across Africa.
-</div>
+<a href="tewodros.html" class="history-card">
+<img src="images/tewodros.jpg">
+<h3>Emperor Tewodros II</h3>
+</a>
 
-</div>
-</div>
+<a href="menelik.html" class="history-card">
+<img src="images/menelik.jpg">
+<h3>Emperor Menelik II</h3>
+</a>
 
-</div>
+<a href="yohannes.html" class="history-card">
+<img src="images/yohannes.jpg">
+<h3>Emperor Yohannes IV</h3>
+</a>
 
-</section>
+<a href="aksum.html" class="history-card">
+<img src="images/aksum.jpg">
+<h3>Aksum Empire</h3>
+</a>
 
-<section class="section">
+<a href="coffee.html" class="history-card">
+<img src="images/coffee.jpg">
+<h3>Origin of Coffee</h3>
+</a>
 
-<h2>Timeline</h2>
+<a href="origin.html" class="history-card">
+<img src="images/lucy.jpg">
+<h3>Origin of Humanity</h3>
+</a>
 
-<div class="timeline">
-
-<div class="timeline-item">
-<strong>3000 BCE</strong> – Early human civilization in the Ethiopian highlands.
-</div>
-
-<div class="timeline-item">
-<strong>100 CE</strong> – Rise of the Aksumite Empire.
-</div>
-
-<div class="timeline-item">
-<strong>1270</strong> – Beginning of the Solomonic dynasty.
-</div>
-
-<div class="timeline-item">
-<strong>1896</strong> – Victory at the Battle of Adwa.
-</div>
-
-<div class="timeline-item">
-<strong>1936–1941</strong> – Italian occupation of Ethiopia.
-</div>
+<a href="never_colonized.html" class="history-card">
+<img src="images/adwa.jpg">
+<h3>Ethiopia Never Colonized</h3>
+</a>
 
 </div>
 
-</section>
-
-<section class="section">
-
-<h2>Watch Ethiopian History</h2>
-
-<iframe src="https://www.youtube.com/embed/B9p9k6sC0l0" allowfullscreen></iframe>
-
-</section>
+</div>
 
 </body>
 </html>
